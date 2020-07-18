@@ -1,0 +1,8 @@
+#指定基底文件為jupyter/base-notebook
+#FROM yangty10/news_jupyter-tutorial
+#RUN pip install --upgrade pip
+#這邊也可以加入啟動時不需手動載入模pip 的套件
+FROM jupyter/base-notebook
+
+WORKDIR /home/jovyan/work/  #連外網的工作目錄
+RUN pip install --upgrade pip

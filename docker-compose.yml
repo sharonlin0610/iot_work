@@ -1,0 +1,19 @@
+version: '2'
+services:
+  jupyter:
+    build:
+      context: ./dockerfile
+      dockerfile: dockerfile-jupyter
+    container_name: jupyter
+    hostname: jupyter
+    ports:
+      - "8889:8888"
+    command: start-notebook.sh --NotebookApp.token=''  #啟動腳本
+    volumes:
+      - ./jupyter:/home/jovyan/work。   #:左 外部網頁打開會有jupyter 目錄
+                                        #：右  Linux 內部的目錄，內裡會放在哪裡
+
+  
+#如果今天啟動2個  image up ( A:有jupyter B有jupyter container 名稱跟port 要不一樣，
+#版本要一樣 8889 ：左連外部 8888 ：右 連內部)     
+
